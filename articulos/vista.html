@@ -20,7 +20,8 @@
 
 	
 
-	
+		</br>
+	     Filtrar: <input ng-model="query"
 		</br>
 		</br>
 		<table class="table table-striped"  >
@@ -31,7 +32,7 @@
 				<th>Cantidad</th>
 			</thead>
 			<tbody>
-				<tr ng-repeat="ar in ctrl.arti">
+				<tr ng-repeat="ar in ctrl.arti|filter:query">
 					<td>{{ar.id}}</td>
 					<td>{{ar.desc}}</td>
 					<td>{{ar.price | currency}}</td>
