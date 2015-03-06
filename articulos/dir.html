@@ -1,0 +1,9 @@
+
+
+<form name="passwordForm">
+	<input type="password" name="password" ng-model="user.password">
+	
+	<input type="password" name="confirmPassword" ngmodel="confirmPassword" validate-equals="user.password">
+	
+	<span ng-show="passwordForm.$error.$equal">Password Bad</span>
+</form>

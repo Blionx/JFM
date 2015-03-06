@@ -1,0 +1,48 @@
+<my-sidelist></my-sidelist>
+
+
+<div ng-hide="show" class="pull-right col-md-9">
+
+
+	<form name="artic" novalidate>
+		
+			<h1>Ingrese Un Nuevo Articulo</h1>
+			<p>Descripcion:</p>
+			<input type="text" ng-model="ctrl.artic.desc">
+			<p>Precio:</p>
+			<input type="number" ng-model="ctrl.artic.price">
+			<input type="hidden" ng-model="ctrl.artic.id">
+			<p><input type="hidden" ng-model="ctrlartic.cant"></p>
+			<button class="btn btn-primary" ng-click="ctrl.guardar()">Guardar</button>
+		
+
+	
+
+	
+
+	
+		</br>
+		</br>
+		<table class="table table-striped"  >
+			<thead>
+				<th>ID</th>
+				<th>Description</th>
+				<th>precio</th>
+				<th>Cantidad</th>
+			</thead>
+			<tbody>
+				<tr ng-repeat="ar in ctrl.arti">
+					<td>{{ar.id}}</td>
+					<td>{{ar.desc}}</td>
+					<td>{{ar.price | currency}}</td>
+					<td>{{ar.cant}}</td>
+					<td><button type="borrar" ng-click="ctrl.borrar(ar.id)">Borrar</button></td>
+				</tr>
+			</tbody>
+		</table>
+</form>
+	
+</div>
+<div ng-show="show">
+	<input type="text" ng-mdoel="query">
+</div>
